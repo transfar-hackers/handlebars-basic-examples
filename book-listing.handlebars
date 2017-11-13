@@ -1,0 +1,22 @@
+<h1>{{user.name}}</h1> <!--simple expression-->
+{{#> info-box}} <!--block-->
+<p>{{info}}</p> <!--nested template-->
+{{/info-box}}
+<div>
+  {{#books}}{{> book}}{{/books}} <!--array as an expression-->
+</div>
+<div>
+  <p>Books array:</p>
+    <pre>
+        {{!-- the tilde "$" prefix indicates that the json helper should be loaded
+              as a module, which allows it to be resolved from the "helpers"
+              directory, which is specified as a resolve fallback in the
+              webpack config. --}}
+    {{$json books}} <!--use handlebars helper-->
+  </pre>
+  <div>
+    {{#greetings people}}
+    <span>People said something here. {{people.greeting}}</span>
+    {{/greetings}}
+  </div>
+</div>

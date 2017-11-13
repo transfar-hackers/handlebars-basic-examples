@@ -1,0 +1,10 @@
+<h1>{{$title title}} <!--use title helper to transform title attribute to uppercase-->
+  <small>{{./title}}</small></h1>
+
+<div>
+  {{#if synopsis}}
+    {{synopsis}}
+  {{else}}
+    No synopsis.
+  {{/if}}
+</div>
